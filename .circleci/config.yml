@@ -7,13 +7,12 @@ orbs:
   heroku: circleci/heroku@0.0.10
 workflows:
   version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
   heroku_deploy:
     jobs:
-      - heroku/deploy-via-git
+      - build
+      - heroku/deploy-via-git:
+          requires:
+            - build
 jobs:
   build:
     executor: node
@@ -21,9 +20,3 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
-  test:
-    executor: node
-    steps:
-      - checkout
-      - run: npm install
-      - run: npm run test
