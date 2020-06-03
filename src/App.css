@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+:root {
+  --main-bg-color: #f4f3ec;
+  --main-txt-color: #331e16;
+  --main-padding: 15px;
+  --header-bg-color: #fd6704;
+  --fade-txt-color: #716d61;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  background-color: var(--main-bg-color);
+  font-size: 1rem;
+  font-family: Verdana, Geneva, sans-serif;
+  color: var(--main-txt-color);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chart-container {
+  margin: 2rem 0;
+  padding-bottom: 30px;
+  border-bottom: 3px solid var(--header-bg-color);
+}
+
+.news-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.news-table thead {
+  background-color: var(--header-bg-color);
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.news-table th {
+  font-weight: normal;
+  padding: 5px 2px;
+}
+
+.news-table td {
+  padding: 4px 0;
+}
+
+.author,
+.news-anchor {
+  color: var(--main-txt-color);
+  margin-right: 0.5rem;
+  font-size: 0.7rem;
+  text-decoration: none;
+}
+
+.domain-name,
+.time {
+  color: var(--fade-txt-color);
+  font-size: 0.6rem;
+}
+
+.btn-upvote,
+.btn-hide {
+  border: 0;
+  background-color: transparent;
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.btn-upvote {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 5px 8px 5px;
+  border-color: transparent transparent #999898 transparent;
+  color: transparent;
+  text-indent: -999999px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-hide:hover {
+  color: var(--header-bg-color);
+}
+
+.btn-upvote:hover {
+  border-color: transparent transparent var(--header-bg-color) transparent;
+  color: transparent;
+}
+
+.center-align-text {
+  text-align: center;
+}
+.left-align-text {
+  text-align: left;
+}
+
+.pagination {
+  margin: 25px 0;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 30px;
+  border-bottom: 3px solid var(--header-bg-color);
+}
+
+.pagination .button {
+  margin-right: 20px;
+  border-right: 2px solid var(--header-bg-color);
+  color: var(--header-bg-color);
+  padding-right: 20px;
+  text-decoration: none;
+}
+
+.pagination .button:last-child {
+  border-right: 0;
+}
+
+.pagination .button:hover {
+  text-decoration: underline;
 }
