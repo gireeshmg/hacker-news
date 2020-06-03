@@ -11,7 +11,7 @@ const PostsPage = ({ match, dispatch, loading, posts, hasErrors }) => {
     if (!page || parseInt(page) !== posts.page) {
       dispatch(fetchPosts(page));
     }
-  }, [dispatch, match]);
+  }, [dispatch, match, posts.page]);
 
   const hideHandler = (id) => {
     dispatch(removeItem(id));
