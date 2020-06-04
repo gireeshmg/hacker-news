@@ -29,7 +29,7 @@ export function fetchPosts(page) {
     dispatch(getPosts());
 
     try {
-      const response = await fetch(`http://hn.algolia.com/api/v1/search_by_date?tags=story&page=${page || 1}`);
+      const response = await fetch(`//hn.algolia.com/api/v1/search_by_date?tags=story&page=${page || 1}`);
       const data = await response.json();
 
       dispatch(getPostsSuccess(data));
