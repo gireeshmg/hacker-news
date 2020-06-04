@@ -13,7 +13,6 @@ workflows:
       - heroku/deploy-via-git:
           requires:
             - build
-            - run: npm run start
 jobs:
   build:
     executor: node
