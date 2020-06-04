@@ -36,7 +36,7 @@ const NewsList = (props) => {
         )}
       </div>
 
-      <Chart {...posts} />
+      {posts.hits && <Chart {...posts} />}
     </div>
   );
 };
