@@ -25,12 +25,12 @@ const NewsList = (props) => {
       <div className="pagination">
 
         {posts.page > 1 && (
-          <Link to={`/${posts.page - 1}`} className="button">
+          <Link to={`/news/${posts.page - 1}`} className="button">
             Previous
           </Link>
         )}
         {posts.nbPages > posts.page + 1 && (
-          <Link to={`/${posts.page + 1}`} className="button">
+          <Link to={`/news/${posts.page + 1}`} className="button">
             Next
           </Link>
         )}

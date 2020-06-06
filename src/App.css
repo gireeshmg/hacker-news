@@ -18,14 +18,45 @@ body {
   color: var(--main-txt-color);
 }
 
+.page-404 {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.loading:after {
+  content: "Loaing...";
+  height: 100%;
+  width: 100%;
+  display: flex;
+  color: var(--main-bg-color);
+  align-items: center;
+  justify-content: center;
+}
+
 .App-link {
   color: #61dafb;
 }
 
 .chart-container {
-  margin: 2rem 0;
+  margin-top: 2rem;
   padding-bottom: 30px;
   border-bottom: 3px solid var(--header-bg-color);
+}
+
+.news-wrapper {
+  padding-bottom: 2rem;
+  position: relative;
 }
 
 .news-table {

@@ -9,18 +9,14 @@ import { StaticRouter } from 'react-router';
 
 import './App.css';
 import NewsPage from './pages/NewsPage';
-
-const NoMatch = () => (
-  <div>
-    <h1>404</h1>
-    React Page Not Found
-  </div>
-);
+import Page404 from './pages/404';
 
 const AppRoutes = () => (
   <Switch>
-    <Route path="/:page?" component={NewsPage} exact />
-    <Route render={NoMatch} />
+    <Route path="/news/:page" component={NewsPage} exact />
+    <Route path="/news" component={NewsPage} exact />
+    <Route path="/" component={NewsPage} exact />
+    <Route render={Page404} />
   </Switch>
 )
 

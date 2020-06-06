@@ -28,11 +28,12 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start-local": "react-scripts start",
+    "start:local": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm run build && NODE_ENV=production node server/bootstrap.js"
+    "start": "npm run build && NODE_ENV=production node server/bootstrap.js",
+    "start:quick": "NODE_ENV=production node server/bootstrap.js"
   },
   "eslintConfig": {
     "extends": "react-app"

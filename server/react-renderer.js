@@ -6,13 +6,11 @@ const fs = require('fs');
 const configureStore = require('../src/configure-store').default;
 
 const initialState = {
-  todos: [
-    {
-      id: 0,
-      text: 'Task in initialState from server',
-      completed: false
-    },
-  ],
+  posts: {
+    loading: true,
+    hasErrors: false,
+    posts: {}
+  }
 };
 
 /**
@@ -48,8 +46,6 @@ exports.render = (routes) => {
           return res.status(404).end(); // WARNING: This 404 will be handled by Express server and won't be your React 404 component.
         }
 
-        const location = req.url;
-
         if (is404) {
           /**
            * Set the app's response to 404 OK (https://httpstatuses.com/404)
@@ -75,8 +71,7 @@ exports.render = (routes) => {
          * rendered HTML and only attach event handlers. 
          * (https://reactjs.org/docs/react-dom-server.html#rendertostring)
          */
-        const jsx = <App store={store} location={location} />
-        const reactDom = renderToString(jsx);
+        const reactDom = renderToString(<App store={store} location={req.url} />);
 
         /**
          * inject the rendered app and it state 
@@ -87,8 +82,8 @@ exports.render = (routes) => {
             '<div id="root"></div>',
             `<div id="root">${reactDom}</div>`
           ).replace(
-            'window.__INITIAL_STATE__ = {}',
-            `window.__INITIAL_STATE__ = {${JSON.stringify(store.getState())}}`
+            'window.__INITIAL_STATE__={}',
+            `window.__INITIAL_STATE__=${JSON.stringify(store.getState())}`
           )
         );
       });

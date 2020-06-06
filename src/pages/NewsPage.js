@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-
 import { fetchPosts, removeItem, upVote } from "../actions";
-
 import NewsList from "../components/NewsList";
+import { useHistory } from "react-router-dom";
 
 const PostsPage = ({ match, dispatch, loading, posts, hasErrors }) => {
+  const history = useHistory();
+
   useEffect(() => {
-    const { page } = match.params;
-    if (!page || parseInt(page) !== posts.page) {
+    const page = match.params.page || 1;
+
+    if (isNaN(page)) {
+      history.push("/404");
+    }
+
+    if (!isNaN(page) && parseInt(page) !== posts.page) {
       dispatch(fetchPosts(page));
     }
-  }, [dispatch, match, posts.page]);
+  }, [dispatch, match, posts, history]);
 
   const hideHandler = (id) => {
     dispatch(removeItem(id));
@@ -22,12 +28,17 @@ const PostsPage = ({ match, dispatch, loading, posts, hasErrors }) => {
   };
 
   const renderPosts = () => {
-    if (loading) return <p>Loading news...</p>;
+    // if (loading) return <p>Loading news...</p>;
     if (hasErrors) return <p>Unable to display news.</p>;
-    return <NewsList hideHandler={hideHandler} upVoteHandler={upVoteHandler} posts={posts} />;
+    return (
+      <div className="news-wrapper">
+        {loading && <span className="loading"></span>}
+        {posts.hits && posts.hits.length && <NewsList hideHandler={hideHandler} upVoteHandler={upVoteHandler} posts={posts} />}
+      </div>
+    );
   };
 
-  return <section>{renderPosts()}</section>;
+  return posts ? <section>{renderPosts()}</section> : null;
 };
 
 const mapStateToProps = (state) => ({
@@ -35,4 +46,5 @@ const mapStateToProps = (state) => ({
   posts: state.posts.posts,
   hasErrors: state.posts.hasErrors
 });
+
 export default connect(mapStateToProps)(PostsPage);
