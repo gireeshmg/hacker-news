@@ -16,18 +16,20 @@ const AppRoutes = () => (
     <Route path="/news/:page" component={NewsPage} exact />
     <Route path="/news" component={NewsPage} exact />
     <Route path="/" component={NewsPage} exact />
-    <Route render={Page404} />
+    <Route component={Page404} />
   </Switch>
 )
 
 function App(props) {
+  console.log(props.location);
+
   return (
     <Provider store={props.store}>
       {
         props.location
           ? (
             <StaticRouter location={props.location} context={{}}>
-              <AppRoutes store={props.store} />
+              <AppRoutes />
             </StaticRouter>
           ) : (
             <BrowserRouter>

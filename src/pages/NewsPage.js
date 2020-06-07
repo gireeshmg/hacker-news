@@ -14,7 +14,7 @@ const PostsPage = ({ match, dispatch, loading, posts, hasErrors }) => {
       history.push("/404");
     }
 
-    if (!isNaN(page) && parseInt(page) !== posts.page) {
+    if (!isNaN(page) && (posts && parseInt(page) !== posts.page)) {
       dispatch(fetchPosts(page));
     }
   }, [dispatch, match, posts, history]);

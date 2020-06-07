@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders List items 1`] = `
+<div>
+  <table
+    class="news-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Comments
+        </th>
+        <th>
+          Vote Count
+        </th>
+        <th>
+          UpVote
+        </th>
+        <th
+          class="left-align-text"
+        >
+          News Details
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          class="center-align-text"
+        >
+          0
+        </td>
+        <td
+          class="center-align-text"
+        >
+          2
+        </td>
+        <td
+          class="center-align-text"
+        >
+          <button
+            class="btn-upvote"
+          >
+            Up vote
+          </button>
+        </td>
+        <td>
+          <a
+            class="news-anchor"
+            href="https://www.damninteresting.com/the-wrath-of-the-killdozer/"
+          >
+            Wrath of the Killdozer
+          </a>
+          <span
+            class="domain-name"
+          >
+            (damninteresting.com)
+             by
+          </span>
+           
+          <span
+            class="author"
+          >
+            js2
+          </span>
+          <span
+            class="time"
+          >
+            2 hours ago
+          </span>
+          <button
+            class="btn-hide"
+          >
+            [ hide ]
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="center-align-text"
+        >
+          0
+        </td>
+        <td
+          class="center-align-text"
+        >
+          16
+        </td>
+        <td
+          class="center-align-text"
+        >
+          <button
+            class="btn-upvote"
+          >
+            Up vote
+          </button>
+        </td>
+        <td>
+          <a
+            class="news-anchor"
+            href="https://www.cnn.com/2020/06/06/us/what-is-defund-police-trnd/index.html"
+          >
+            There's a growing call to defund the police. Here's what it means
+          </a>
+          <span
+            class="domain-name"
+          >
+            (cnn.com)
+             by
+          </span>
+           
+          <span
+            class="author"
+          >
+            MilnerRoute
+          </span>
+          <span
+            class="time"
+          >
+            2 hours ago
+          </span>
+          <button
+            class="btn-hide"
+          >
+            [ hide ]
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="pagination"
+  >
+    <a
+      class="button"
+      href="/news/2"
+    >
+      Next
+    </a>
+  </div>
+  <div
+    class="chart-container"
+  >
+    <div
+      id="chart-1"
+      style="height: 300px; line-height: 300px; width: 100%; text-align: center; color: rgb(153, 153, 153); font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;"
+    >
+      <canvas />
+    </div>
+  </div>
+</div>
+`;

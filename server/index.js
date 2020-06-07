@@ -4,7 +4,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 
 const reactRenderer = require('./react-renderer');
-const routes = ['/', '/news/:page'];
+const routes = ['/', '/news/:page?'];
 
 /**
  * initialize the application and create the routes

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders List items 1`] = `
+<table>
+  <tbody>
+    <tr>
+      <td
+        class="center-align-text"
+      >
+        0
+      </td>
+      <td
+        class="center-align-text"
+      >
+        2
+      </td>
+      <td
+        class="center-align-text"
+      >
+        <button
+          class="btn-upvote"
+        >
+          Up vote
+        </button>
+      </td>
+      <td>
+        <a
+          class="news-anchor"
+          href="https://www.damninteresting.com/the-wrath-of-the-killdozer/"
+        >
+          Wrath of the Killdozer
+        </a>
+        <span
+          class="domain-name"
+        >
+          (damninteresting.com)
+           by
+        </span>
+         
+        <span
+          class="author"
+        >
+          js2
+        </span>
+        <span
+          class="time"
+        >
+          2 hours ago
+        </span>
+        <button
+          class="btn-hide"
+        >
+          [ hide ]
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
