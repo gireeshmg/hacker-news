@@ -32,6 +32,8 @@ const PostsPage = ({ match, dispatch, loading, posts, hasErrors }) => {
     if (hasErrors) return <p>Unable to display news.</p>;
     return (
       <div className="news-wrapper">
+
+        <h1 className="hidden">Hacker News</h1>
         {loading && <span className="loading"></span>}
         {posts.hits && posts.hits.length && <NewsList hideHandler={hideHandler} upVoteHandler={upVoteHandler} posts={posts} />}
       </div>

@@ -2,7 +2,7 @@
   --main-bg-color: #f4f3ec;
   --main-txt-color: #331e16;
   --main-padding: 15px;
-  --header-bg-color: #fd6704;
+  --header-bg-color: #bb4b02;
   --fade-txt-color: #716d61;
 }
 
@@ -50,7 +50,7 @@ body {
 
 .chart-container {
   margin-top: 2rem;
-  padding-bottom: 30px;
+  padding-bottom: 1.8rem;
   border-bottom: 3px solid var(--header-bg-color);
 }
 
@@ -65,33 +65,30 @@ body {
   font-size: 0.8rem;
 }
 
-.news-table thead {
+.news-table th {
+  font-weight: 600;
+  padding: 0.5rem 2px;
   background-color: var(--header-bg-color);
   font-size: 0.8rem;
   color: #fff;
 }
 
-.news-table th {
-  font-weight: normal;
-  padding: 5px 2px;
-}
-
 .news-table td {
-  padding: 4px 0;
+  padding: 0.5rem 0;
 }
 
 .author,
 .news-anchor {
   color: var(--main-txt-color);
   margin-right: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
 .domain-name,
 .time {
   color: var(--fade-txt-color);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
 .btn-upvote,
@@ -106,7 +103,7 @@ body {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 5px 8px 5px;
+  border-width: 0 0.3rem 0.5rem 0.3rem;
   border-color: transparent transparent #999898 transparent;
   color: transparent;
   text-indent: -999999px;
@@ -131,18 +128,18 @@ body {
 }
 
 .pagination {
-  margin: 25px 0;
+  margin: 1.5rem 0;
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 30px;
+  padding-bottom: 1.8rem;
   border-bottom: 3px solid var(--header-bg-color);
 }
 
 .pagination .button {
-  margin-right: 20px;
+  margin-right: 1.25rem;
   border-right: 2px solid var(--header-bg-color);
   color: var(--header-bg-color);
-  padding-right: 20px;
+  padding-right: 1.25rem;
   text-decoration: none;
 }
 
@@ -152,4 +149,8 @@ body {
 
 .pagination .button:hover {
   text-decoration: underline;
+}
+
+.hidden {
+  display: none;
 }
